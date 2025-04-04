@@ -38,6 +38,6 @@ public class PlayerHealth : MonoBehaviour
     }
     void SetUI()
     {
-        healthUI.fillAmount = health / Maxhealth;
+        //healthUI.fillAmount = health / Maxhealth;
     }
 }

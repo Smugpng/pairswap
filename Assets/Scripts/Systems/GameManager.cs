@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     int threatLvl = 1;
     public GameObject blockPrefab;
     public Transform player;
-    GameObject Enemies;
+    public GameObject Enemies;
     Transform enemies;
 
     [Header("Score")]
@@ -20,15 +20,15 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        Enemies = GameObject.FindGameObjectWithTag("Orginization");
-        enemies = Enemies.transform;
-        scoreText.text = string.Empty;
+        //enemies = Enemies.transform;
+        //scoreText.text = string.Empty;
         highScore = PlayerPrefs.GetInt("HighScore");
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        Debug.Log("Hey");
         UpdateThreats();
         SpawnBlocks();
         
@@ -37,8 +37,10 @@ public class GameManager : MonoBehaviour
     void UpdateThreats()
     {
         threatMeter = Time.deltaTime;
+        Debug.Log("Check" + threatMeter);
         if (threatMeter > 30)
         {
+            
             threatMeter = 0;
             threatLvl += 1;
         }
@@ -46,6 +48,7 @@ public class GameManager : MonoBehaviour
     void SpawnBlocks()
     {
        int chance = Random.Range(0, 100);
+        Debug.Log(chance);
         if (chance <= threatLvl*3)
         {
             CreateEnemies();
@@ -58,6 +61,7 @@ public class GameManager : MonoBehaviour
         block.transform.SetParent(enemies);
         block.transform.position = new Vector3(player.transform.position.x + (Random.Range(-10,10)), player.transform.position.y + (Random.Range(-10, 10)), player.transform.position.z);
         block.transform.localScale = new Vector3(Random.Range(.25f, 1), Random.Range(.25f, 1), Random.Range(.25f, 1));
+        Debug.Log("Test");
     }
 
     public void ResetGame()

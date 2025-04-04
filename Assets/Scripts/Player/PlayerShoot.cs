@@ -34,7 +34,7 @@ public class PlayerShoot : MonoBehaviour
     }
     private void UpdateUI()
     {
-        chargeUI.fillAmount = timer;
+       // chargeUI.fillAmount = timer;
     }
     private void ChargeShot()
     {

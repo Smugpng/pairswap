@@ -4,6 +4,8 @@ using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
+using static UnityEditor.PlayerSettings;
+using UnityEngine.UIElements;
 
 public class ZoomInOut : MonoBehaviour
 {
@@ -15,25 +17,8 @@ public class ZoomInOut : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f) // forward
-        {
-            ZoomIn();
-        }
-        else if (Input.GetAxis("Mouse ScrollWheel") < 0f) // backwards
-        {
-            ZoomOut();
-        }
+       
+        cam.assetsPPU += (int)Input.mouseScrollDelta.y * 2;
 
-    }
-    public void ZoomIn()
-    {
-        int value = Mathf.Max(scroll, 5);
-        cam.assetsPPU = value - 1;
-        Debug.LogWarning("hey");
-    }
-    public void ZoomOut()
-    {
-        int value = Mathf.Min(scroll, 50);
-        cam.assetsPPU = value + 1;
     }
 }
