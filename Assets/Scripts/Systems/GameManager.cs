@@ -20,9 +20,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        //enemies = Enemies.transform;
-        //scoreText.text = string.Empty;
+        scoreText.text = string.Empty;
         highScore = PlayerPrefs.GetInt("HighScore");
+        enemies = Enemies.transform;
     }
 
     // Update is called once per frame
@@ -37,7 +37,6 @@ public class GameManager : MonoBehaviour
     void UpdateThreats()
     {
         threatMeter = Time.deltaTime;
-        Debug.Log("Check" + threatMeter);
         if (threatMeter > 30)
         {
             
@@ -61,7 +60,6 @@ public class GameManager : MonoBehaviour
         block.transform.SetParent(enemies);
         block.transform.position = new Vector3(player.transform.position.x + (Random.Range(-10,10)), player.transform.position.y + (Random.Range(-10, 10)), player.transform.position.z);
         block.transform.localScale = new Vector3(Random.Range(.25f, 1), Random.Range(.25f, 1), Random.Range(.25f, 1));
-        Debug.Log("Test");
     }
 
     public void ResetGame()
@@ -71,7 +69,7 @@ public class GameManager : MonoBehaviour
     public void AddPoints(int points)
     {
         score += points;
-        scoreText.text = "Score: " + score;
+       scoreText.text = "Score: " + score;
         if (score > highScore)
         {
             PlayerPrefs.SetInt("HighScore", score);

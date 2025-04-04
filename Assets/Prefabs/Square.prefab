@@ -255,8 +255,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walls:
     serializedVersion: 2
-    m_Bits: 16
+    m_Bits: 8
   cubePrefab: {fileID: 2378292341959619162, guid: e6500b00bfb69a7469c0bbc8dfacaa6a, type: 3}
-  isSpawn: 1
+  isSpawn: 0
   amountOfSpawn: 0
   Enemies: {fileID: 0}

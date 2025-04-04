@@ -9,7 +9,6 @@ using UnityEngine.UIElements;
 
 public class ZoomInOut : MonoBehaviour
 {
-    int scroll = 20;
     PixelPerfectCamera cam;
     private void Start()
     {
@@ -19,6 +18,5 @@ public class ZoomInOut : MonoBehaviour
     {
        
         cam.assetsPPU += (int)Input.mouseScrollDelta.y * 2;
-
     }
 }

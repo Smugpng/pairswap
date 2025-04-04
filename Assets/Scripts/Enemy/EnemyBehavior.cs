@@ -68,7 +68,7 @@ public class EnemyBehavior : MonoBehaviour
             gameManager.AddPoints(50);
             for (int x = 0; x < amountOfSpawn; x++)
             {
-
+                Debug.Log("hit");
                 CreateSpawn();
             }
 

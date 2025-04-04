@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
    
-    void FixedUpdate()
+    void Update()
     {
         MovePlayer();
         FlipCheck();

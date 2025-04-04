@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1169136052053458714}
   - component: {fileID: 7816217763816184161}
   - component: {fileID: -1923240776829602584}
+  - component: {fileID: 4230094600465808815}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -4837,7 +4838,7 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 2100000, guid: 4743cfc2e882b5643938f94bef5a333c, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4899,8 +4900,8 @@ AudioSource:
   m_GameObject: {fileID: 1949367985629236688}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 5ba509343000fdf4b9decd20a8ee294e, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 7e653df7e26969c4baa7488efe6f4aa6, type: 3}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 562098f04de873245902cd274336219d, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 0fa11c09c11f1de4e8a5b8a6dbff9290, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.423
   m_Pitch: 1
@@ -4986,3 +4987,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4230094600465808815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949367985629236688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a599ce5088d8b7469652d4e0aece950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

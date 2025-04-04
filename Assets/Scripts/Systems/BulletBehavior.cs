@@ -17,7 +17,7 @@ public class BulletBehavior : MonoBehaviour
             {
                 Instantiate(hitFX, this.transform.position, Quaternion.identity);
             }
-
+            Debug.Log("Hit block");
             enemyBehavior.HitDelay();
         }
         if (isBullet)
