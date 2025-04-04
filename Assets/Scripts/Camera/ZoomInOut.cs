@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
@@ -10,6 +12,18 @@ public class ZoomInOut : MonoBehaviour
     private void Start()
     {
         cam = GetComponent<PixelPerfectCamera>();
+    }
+    private void Update()
+    {
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f) // forward
+        {
+            ZoomIn();
+        }
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0f) // backwards
+        {
+            ZoomOut();
+        }
+
     }
     public void ZoomIn()
     {
