@@ -7,6 +7,7 @@ public class BulletBehavior : MonoBehaviour
     EnemyBehavior enemyBehavior;
     public GameObject hitFX;
     public bool isBullet;
+    public int health;
 
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -22,8 +23,12 @@ public class BulletBehavior : MonoBehaviour
         }
         if (isBullet)
         {
-
-            DestroySelf();
+            --health;
+            if(health <= 0) 
+            {
+                DestroySelf();
+            }
+            
         }
     }
 

@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private bool HitEnemy()
     {
-        return Physics2D.OverlapCircle(wallCheck.position, 0.3f, enemyLayer);
+        return Physics2D.OverlapCircle(wallCheck.position, 0.5f, enemyLayer);
     }
     private void HorizontalFlip()
     {

@@ -11,7 +11,7 @@ public class CamShake : MonoBehaviour
     Vector3 startPos;
     private void Start()
     {
-        startPos = transform.position;
+        
     }
 
     // Update is called once per frame
@@ -19,6 +19,7 @@ public class CamShake : MonoBehaviour
     {
         if (start)
         {
+            startPos = transform.position;
             start = false;
             StartCoroutine(Shaking());
         }

@@ -28,7 +28,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log("Hey");
         UpdateThreats();
         SpawnBlocks();
         
@@ -57,8 +56,14 @@ public class GameManager : MonoBehaviour
     void CreateEnemies()
     {
         GameObject block = Instantiate(blockPrefab);
+
+        float range = Random.Range(5, 10);
+        if( Random.Range(0,5) > 2)
+        {
+            range =  range*-1;
+        }
         block.transform.SetParent(enemies);
-        block.transform.position = new Vector3(player.transform.position.x + (Random.Range(-10,10)), player.transform.position.y + (Random.Range(-10, 10)), player.transform.position.z);
+        block.transform.position = new Vector3(player.transform.position.x + range, player.transform.position.y + range, player.transform.position.z);
         block.transform.localScale = new Vector3(Random.Range(.25f, 1), Random.Range(.25f, 1), Random.Range(.25f, 1));
     }
 

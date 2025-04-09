@@ -11,7 +11,7 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private UnityEngine.UI.Image chargeUI;
 
     [Header("BulletStuff")]
-    [SerializeField] GameObject bulletPrefab, explosion;
+    [SerializeField] GameObject bulletPrefab, bullet2Prefab, explosion;
     [SerializeField] Transform spawnPos;
     public void Shoot(InputAction.CallbackContext context)
     {
@@ -40,7 +40,8 @@ public class PlayerShoot : MonoBehaviour
     {
         if (isCharging)
         {
-            timer += Time.deltaTime / 7;
+            timer += Time.deltaTime / 3;
+            Debug.Log(timer);
         }
         else if (!isCharging)
         {
@@ -49,11 +50,18 @@ public class PlayerShoot : MonoBehaviour
     }
     private void Shoot()
     {
-        if (timer < 1)
+        if (timer < .5)
         {
             GameObject shot = Instantiate(bulletPrefab, spawnPos.position, transform.rotation);
             Rigidbody2D rb = shot.GetComponent<Rigidbody2D>();
             float speed = (7 + (timer * 2));
+            rb.AddForce(transform.up * speed, ForceMode2D.Impulse);
+        }
+        else if( timer < 1)
+        {
+            GameObject shot = Instantiate(bullet2Prefab, spawnPos.position, transform.rotation);
+            Rigidbody2D rb = shot.GetComponent<Rigidbody2D>();
+            float speed = (9 + (timer * 2));
             rb.AddForce(transform.up * speed, ForceMode2D.Impulse);
         }
         else if (timer > 1)
