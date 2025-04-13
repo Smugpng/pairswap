@@ -542,8 +542,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ComponentVersion: 1
   m_AssetsPPU: 20
-  m_RefResolutionX: 320
-  m_RefResolutionY: 180
+  m_RefResolutionX: 480
+  m_RefResolutionY: 360
   m_CropFrame: 0
   m_GridSnapping: 2
   m_FilterMode: 0
@@ -590,8 +590,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 1
-      value: 0.49292374
+      time: 1.0032349
+      value: 0.15113068
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1619,7 +1619,19 @@ MonoBehaviour:
     m_ActionId: 34e0e99b-f766-4e7b-b0fd-75dac8c580ab
     m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 324482227}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Pause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 3c242a71-9de8-400d-bef8-7b413ac1551e
     m_ActionName: Player/Pause[/Keyboard/p,/Keyboard/escape]
   - m_PersistentCalls:
