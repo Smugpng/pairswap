@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         MovePlayer();
-        FlipCheck();
+        //FlipCheck();
         CheckCollision();
     }
 

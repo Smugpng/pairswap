@@ -556,6 +556,25 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2882370987144258176, guid: 054fa75456a68f84f9c183a6db3ffbb1, type: 3}
+      propertyPath: m_text
+      value: 'Controls
+
+        Aim - Mouse Cursor
+
+        Movement - WASD
+
+        Shoot
+        - Left Mouse Button
+
+        Shockwave - Hold Down Left Mouse Button
+
+
+        Objective
+
+        Live
+        for as long as possible'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882370987144258176, guid: 054fa75456a68f84f9c183a6db3ffbb1, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 415b44b30632d1842896ca8d370b9a03, type: 2}
