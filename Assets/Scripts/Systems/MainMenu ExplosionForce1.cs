@@ -11,6 +11,7 @@ public class MainMenuExplosionForce : MonoBehaviour
     float timer;
     private void Update()
     {
+        // Use invoke repeating rather than update to calculate timer
         timer += Time.deltaTime;
         if (timer >= 15)
         {

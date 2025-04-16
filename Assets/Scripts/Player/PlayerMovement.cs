@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isDashing;
     PlayerHealth health;
 
+    [SerializeField] private CamShake camShake;
+
     public bool canHurt = true;
     private bool HitWall()
     {
@@ -51,8 +53,10 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         MovePlayer();
-        FlipCheck();
-        CheckCollision();
+        //FlipCheck();
+
+        // Remove call to this as it is done in collision function.
+        //CheckCollision();
     }
 
     private void MovePlayer()
@@ -108,6 +112,27 @@ public class PlayerMovement : MonoBehaviour
 
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Check if collision is on the layer that enemies are on
+        if (collision.gameObject.layer == LayerMask.NameToLayer("blocks"))
+        {
+            if (canHurt)
+            {
+                canHurt = false;
+                health.TakeDamage();
+
+                // Assign this manually in the inspector instead.
+                //CamShake camShake = FindAnyObjectByType<CamShake>();
+
+                // Can also make a public method that calls the coroutine rather than starting it directly.
+                camShake.StartCoroutine(camShake.Shaking());
+                Invoke("resetIframes", 1);
+            }
+        }
+    }
+
     void resetIframes()
     {
         canHurt = true;

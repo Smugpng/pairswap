@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     private PlayerAudio playerAudio;
     private void Start()
     {
+        // Assign in inspector rather than in code
         playerAudio = GetComponent<PlayerAudio>();
         manager = FindAnyObjectByType<GameManager>();
         health = Maxhealth;

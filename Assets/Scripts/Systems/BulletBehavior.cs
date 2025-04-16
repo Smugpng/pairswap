@@ -34,6 +34,7 @@ public class BulletBehavior : MonoBehaviour
 
     private void DestroySelf()
     {
+        // Instead put bullet in pool to be used later.
         Destroy(gameObject);
     }
 }

@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
     }
     void CreateEnemies()
     {
+        // Create enemies and add them to an object pool to recycle them rather than creating new ones each time.
         GameObject block = Instantiate(blockPrefab);
 
         float range = Random.Range(5, 10);

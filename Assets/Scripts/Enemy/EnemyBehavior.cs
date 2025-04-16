@@ -77,10 +77,12 @@ public class EnemyBehavior : MonoBehaviour
         {
             gameManager.AddPoints(25);
         }
+        // Add to pool rather than destroy.
         Destroy(this.gameObject);
     }
     void CreateSpawn()
     {
+        // Object pooling to reuse enemies rather than creating new ones each time.
         GameObject smallEnemy = Instantiate(cubePrefab);
         smallEnemy.transform.localScale = transform.localScale / amountOfSpawn;
         smallEnemy.transform.position = this.transform.position * Random.Range(.75f, 1);

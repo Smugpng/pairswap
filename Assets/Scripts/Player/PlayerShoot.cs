@@ -29,13 +29,18 @@ public class PlayerShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Could make these only be called when input occurs, rather than constantly checking.
         ChargeShot();
         UpdateUI();
     }
+
+    // Can update UI only when charge shot is called, because it should only update when something occurs with the charge shot.
     private void UpdateUI()
     {
        chargeUI.fillAmount = timer;
     }
+
+    // Call this only when input occurs, not every frame.
     private void ChargeShot()
     {
         if (isCharging)
@@ -48,6 +53,8 @@ public class PlayerShoot : MonoBehaviour
             timer = 0;
         }
     }
+
+    // Rather than instantiating a bullet each time shooting occurs, use an object pool to reduce garbage collection.
     private void Shoot()
     {
         if (timer < .5)

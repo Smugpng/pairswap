@@ -17,16 +17,17 @@ public class CamShake : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (start)
-        {
-            startPos = transform.position;
-            start = false;
-            StartCoroutine(Shaking());
-        }
+        //if (start)
+        //{
+        //    startPos = transform.position;
+        //    start = false;
+        //    StartCoroutine(Shaking());
+        //}
     }
 
-    IEnumerator Shaking()
+    public IEnumerator Shaking()
     {
+        startPos = transform.position;
 
         float elapsedTime = 0f;
 
